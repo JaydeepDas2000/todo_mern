@@ -1,12 +1,20 @@
 import React, {useState} from 'react'
 
+import { useDispatch } from 'react-redux';
+import { addNewTodo } from '../redux/actions';
+
 function TodoForm() {
 
     const [text, setText] = useState(""); //NOSONAR
 
+    const dispatch = useDispatch();
 
-    const OnFromSubmit = () => {
+    const OnFromSubmit = (e) => {
         // TODO: working on it
+        e.preventDefault();
+
+        // addNewTodo(); we can directly use it but in redux we have to use dispatch
+        dispatch(addNewTodo(text));
     }
     const onInputChange = (e) => {
         setText(e.target.value);
