@@ -6,6 +6,7 @@ export const todosReducers = (state = [], action) => {
         case actionTypes.ADDNEW_TODO:
             return [action.payload, ...state]
 
+        // TODO : add new cases
         default:
             return state;
     }

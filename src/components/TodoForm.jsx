@@ -15,6 +15,8 @@ function TodoForm() {
 
         // addNewTodo(); we can directly use it but in redux we have to use dispatch
         dispatch(addNewTodo(text));
+
+        setText('');
     }
     const onInputChange = (e) => {
         setText(e.target.value);
@@ -23,7 +25,7 @@ function TodoForm() {
   return (
     <header>
         <form className='form' onSubmit={OnFromSubmit}>
-            <input type="text" className="form-control input-todo" placeholder='Todo Note eg. Make Dinner' onChange={onInputChange}/>
+            <input type="text" className="form-control input-todo" placeholder='Todo Note eg. Make Dinner' onChange={onInputChange} value={text}/>
         </form>
     </header>
   )
